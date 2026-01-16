@@ -4,7 +4,7 @@ Here I document:
 - [Setup](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#setup)
 - [Agent Permissions](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#agent-permissions)
 - [SLAs](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#service-level-agreements-slas)
-- Department-Based Ticket Routing
+- [Department-Based Ticket Routing](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#department-based-ticket-routing)
 
 ## Setup
 
@@ -140,3 +140,13 @@ Here I document:
  Hypothetical managers are expected to enforce these ticket SLA policies for their respective departments. 
 
 ## Department-Based Ticket Routing
+ This part perhaps is the simplest, as ticket creation includes the option for routing to certain departments or teams of agents. 
+
+ I have created a team for each department made up of each Agent assigned to that department with their respective leaders.
+ These teams help make organization easier as well as provide a natural way to seperate sub-teams if the need ever arises (e.g. Startup grows into a larger organization with different teams)
+ ![Image of each team within OSTicket](./images/teams.png)
+
+ From there, its as easy as assigning the ticket to the team in question. Below is an image of an "Account issues" topic being configured to be routed automatically to the IT Support team.
+ ![Images shows ticket configuration options](./images/ticketConf.png)
+ 
+ 
