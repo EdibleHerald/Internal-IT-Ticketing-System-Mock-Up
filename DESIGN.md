@@ -2,8 +2,8 @@
 
 Here I document: 
 - [Setup](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#setup)
-- Agent Permissions
-- SLAs
+- [Agent Permissions](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#agent-permissions)
+- [SLAs](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#service-level-agreements-(SLAs))
 - Department based ticket routing
 
 ## Setup
@@ -80,5 +80,44 @@ Here I document:
 
  From there, its just about following on-screen instructions and setting up an admin user.
 
+## Agent Permissions
+ There are a total of 8 agents between the 3 dedicated departments that handle tickets:
+ 
+ - Human Resources: 2 Agents
+ - IT Support: 4 Agents
+ - Product Development / Quality Assurance: 2 Agents
 
+ Each department's agents get their own permissions:
 
+ ### IT Support Department
+ Managers specifically get:
+ - User Creation Permissions
+ - User Account Edit/Management Permissions
+ - Altering Email Banlists
+ - Ability to view user stats
+
+ Below is a picture of a permission's page for one of the IT Managers:
+ ![Picture showing some of the permissions granted to an IT manager](./images/ITperm1.png)
+
+ Those below managers keep the ability to view statistics but generally don't get the ability to alter or create user accounts as a security precaution. As this is for a hypothetical 30-person SaaS, it makes sense for user creation to be delegated to a higher-up in a manager role as opposed to other agents who don't need these permissions. 
+
+ The other IT Support agents get:
+ - Ability to view user statistics
+ - Manage user accounts (but NOT edit them)
+ - View user directory
+ - View other departments
+
+ Every single IT Support agent gets an "Expanded" primary role which allows them to open, close, edit, and assign tickets which is their main responsibility for the most part. 
+
+ ### Human Resources and Product Development / Quality Assurance
+ This is a rather short sub-section, both departments' agents get the same permissions:
+ - View user directory
+ - View other departments
+ - Unable to manage,edit, or create user accounts
+ - Ability to search through tickets
+
+ These agents also get an "Expanded" primary role since they need to be able to open,close,edit, and assign tickets.
+
+ Otherwise, they have limited abilities since they don't need many permissions to resolve the "simpler" ticket topics that their departments are routed. 
+
+## Service Level Agreements (SLAs)
