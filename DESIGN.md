@@ -4,7 +4,7 @@ Here I document:
 - [Setup](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#setup)
 - [Agent Permissions](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#agent-permissions)
 - [SLAs](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#service-level-agreements-slas)
-- Department based ticket routing
+- Department-Based Ticket Routing
 
 ## Setup
 
@@ -121,3 +121,22 @@ Here I document:
  Otherwise, they have limited abilities since they don't need many permissions to resolve the "simpler" ticket topics that their departments are routed. 
 
 ## Service Level Agreements (SLAs)
+ There are 4 custom Service Level Ageements made in this lab:
+
+ - High Priority (8 hours)
+ - Human Resources (27 hours)
+ - Quality Assurance (40 hours)
+ - Short-term Issues (18 hours)
+
+ For the two with department names, it is meant to indicate the default for tickets routed to their respective departments. 
+ "High Priority" and "Short-term Issues" however, are used for more important/urgent ticket topics
+
+ This is shown off in the demonstration within the README.md, here is a screenshot of a resolved ticket:
+
+ ![Resolved ticket using "high priority" SLA](./images/resolved.png)
+
+ Here we can see that the ticket submitted by "Hester Flower" has automatically be assigned "High Priority" SLA due to the ticket topic having been setup that way. This allows for easy identification of important tickets while urging agents to complete it ASAP.
+
+ Hypothetical managers are expected to enforce these ticket SLA policies for their respective departments. 
+
+## Department-Based Ticket Routing
