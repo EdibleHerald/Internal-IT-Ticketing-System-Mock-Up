@@ -1,7 +1,7 @@
 # Design Details and Setup
 
 Here I document: 
-- Setup
+- [Setup](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#setup)
 - Agent Permissions
 - SLAs
 - Department based ticket routing
