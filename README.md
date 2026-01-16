@@ -3,7 +3,8 @@
 This project showcases an IT ticketing system using OSTicket for a hypothetical 30-person SaaS startup.
 
 Here is a simple illustration of the main departments, their assigned agents, and the support tickets they handle.
-![Image depicting all relevant department with their agents as well as ticket topics they handle.](./osticketProject.drawio.png)
+![Image depicting all relevant department with their agents as well as ticket topics they handle.](./images/osticketProject.drawio.png)
+This image is a conception overview, more details on the setup below. 
 
 ## Project Goals and Scope
 This project documents a configured OSTicket instance to support internal-only ticketing.
@@ -12,6 +13,8 @@ This project documents a configured OSTicket instance to support internal-only t
 - Business-hours SLA policies
 - Realistic internal IT, HR, and Product/QA workflows
 
+The hypothetical organization in question is a 30-person SaaS startup.
+
 ## Technology Stack
 This project uses the following:
 - Qemu, for a VM instance
@@ -19,3 +22,17 @@ This project uses the following:
 - Ubuntu Server 24.04.03 LTS
 - Apache2, with PHP and MySQLi extensions as the webserver to host OSTicket
 - MariaDB, a MySql database used by OSTicket 
+
+# Departments and Agents
+Within this SaaS startup, there are 5 departments:
+- *Human Resources (HR)
+- *Internal IT
+- *Product Development / Quality Assurance
+- Sales & Marketing
+- Accounting
+
+Only the three marked (*) are given dedicated agents for tickets assigned to them. 
+You can consult the image for specific titles and mock names used. 
+See the below image for each department and their assigned manager. 
+![Image showing departments and their assigned manager](./images/department.png)
+
