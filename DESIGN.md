@@ -3,7 +3,7 @@
 Here I document: 
 - [Setup](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#setup)
 - [Agent Permissions](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#agent-permissions)
-- [SLAs](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#service-level-agreements-(SLAs))
+- [SLAs](https://github.com/EdibleHerald/Internal-IT-Ticketing-System-Mock-Up/blob/main/DESIGN.md#service-level-agreements-slas)
 - Department based ticket routing
 
 ## Setup
