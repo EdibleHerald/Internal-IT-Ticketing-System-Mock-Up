@@ -1,3 +1,84 @@
 # Design Details and Setup
 
-Here I document permissions and setup more carefully. Specifically, I aim to explain my setup process and the reasoning for the permissions I chose. 
+Here I document: 
+- Setup
+- Agent Permissions
+- SLAs
+- Department based ticket routing
+
+## Setup
+
+ ### Qemu Setup
+ I used Qemu to create a Ubuntu Server 24.04 LTS instance. Below are some commands used. 
+
+ ```
+ # Creates a disk image for our VM to use
+ qemu-img create -f qcow2 ubuntuDiskimage 50G 
+
+ # Boots a virutal machine with 4 cores, 4GB of 
+ # ram, uses a Ubuntu CDROM, and attaches a disk 
+ # image that acts as its harddisk.
+
+ # Additionally uses Host's port 8080 to output the
+ # virtual machine's port 80 data, this allows the 
+ # Host to access the OSTicket webpage.
+
+ # "-display gtk" is specifically for Wayland GUIs,
+ # it can be removed if unneeded 
+
+ qemu-system-x86_64 -cdrom pathToUbuntuRomHere -boot order=d -drive file=ubuntuDiskimage,format=qcow2 -display gtk,grab-on-hover=off -m 4G -cpu max -smp 4 -netdev user,id=net0,hostfwd=tcp:127.0.0.1:8080-:80 -device virtio-net-pci,netdev=net0
+
+ # From there, setup Ubuntu server as normal. After
+ # setting up, close the virtual machine but remove # the "-cdrom" flag from the command and it should # boot up normally. 
+ ```
+
+ Note: Update system after finishing installation:
+ ` sudo apt update` & `sudo apt upgrade`
+
+ ### Install Necessary Packages
+ From there, the Ubuntu Server instance needs some packages:
+ 
+ - apache2
+ - libapache2-mod-php # Apache PHP module, restart Apache2 after installation
+ - mariadb-server
+ - mariadb-client
+ - curl
+ - unzip
+
+ All of these were downloaded using
+ ` sudo apt install "packages here"`
+
+ OSTicket's installation instructions ask for the "rewrite" module to be enabled in apache:
+ `sudo a2enmod rewrite # Restart apache2 after this`
+
+ ### Configure a Mariadb Database
+ OSTicket requires a database through MySQL and an admin user for it to use during installation. 
+
+ This is as simple as running the following 3 commands:
+ ```
+ CREATE USER 'user'@'localhost' IDENTIFIED BY 'password'
+ CREATE DATABASE myDatabase
+ GRANT ALL ON myDatabase.* TO 'user'@'localhost'
+ ```
+ This creates a database named "myDatabase" with admin user "user" with password "password".
+
+ ### OSTicket installation
+ Here we curl a zipped installation from the OSTicket github, unzip it, then move the OSTicket folder to /var/www/html.
+
+ Copy the "ost-sampleconfig.php" into a new "ost-config.php" file that will serve as the configuration file for OSTicket. 
+
+ Give it the following permissions:
+ ```
+ sudo chown -R www-data:www-data /var/www/html/osticket
+ sudo chmod -R 755 /var/www/html/osticket
+ sudo chmod 0666 /var/www/html/osticket/include/ost-config.php
+ ```
+
+ Now its simple as accessing the OSTicket site to finish setup at the loopback address at the port used when setting up the virtual machine:
+
+ `http://127.0.0.1:8080`
+
+ From there, its just about following on-screen instructions and setting up an admin user.
+
+
+
