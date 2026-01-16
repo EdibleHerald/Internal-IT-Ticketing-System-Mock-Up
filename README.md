@@ -63,3 +63,14 @@ These times are based off the Monday-Friday, 8am-5pm schedule that most departme
 The below image shows off these SLAs within the admin panel. 
 ![Image showing configured SLA policy](./images/SLA.png)
 
+## Access Control and Roles
+At a minimum, each agent has permissions to view users, search for tickets, and see all departments. 
+However, some department agents have special permissions:
+- IT Support Agents: user creation, user account management, statistics on other agents, ability to alter email banlist for effective security.
+- Human Resource Agents: User account management (but no editing permissions).
+- Quality Assurance: Cannot manage user accounts as its unnecessary. 
+
+Each agent has also been given the "Expanded" primary role. This role allows agents to create, close, assign, and edit tickets as well as more. This role was chosen with the idea that these agents will be the primary handlers of their respective tickets, so they get the permissions they need to adequately manage tickets but without permissions to outright delete tickets for preservation. 
+
+Below is an image showing the permissions of the "Expanded" role. 
+![Image showing "Expanded" role permissions](./images/role.png)
