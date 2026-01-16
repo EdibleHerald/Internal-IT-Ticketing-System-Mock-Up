@@ -6,6 +6,8 @@ Here is a simple illustration of the main departments, their assigned agents, an
 ![Image depicting all relevant department with their agents as well as ticket topics they handle.](./images/osticketProject.drawio.png)
 This image is a conception overview, more details on the setup below. 
 
+NOTE: "Harold" (author) is the admin, meant to be a stand-in for the hypothetical IT Administrator. 
+
 ## Project Goals and Scope
 This project documents a configured OSTicket instance to support internal-only ticketing.
 - Department-based ticket routing
@@ -74,3 +76,23 @@ Each agent has also been given the "Expanded" primary role. This role allows age
 
 Below is an image showing the permissions of the "Expanded" role. 
 ![Image showing "Expanded" role permissions](./images/role.png)
+
+## Demonstration
+
+We will login as an employee (Hester Flower) and submit a ticket, where we will then login as an agent and resolve the relevant ticket.
+
+First, we login as Hester Flower and submit a basic ticket about needing credentials for a CI server.
+![Image showing a user Hester Flower creating a support ticket](./images/ticket.png)
+
+Then, the ticket is routed to the IT Support team. Looking back at who is the manager of that team, it should be Dre Lovelace. So we login into the Dre Lovelace agent account to resolve this ticket. Below is an image of the page of Dre Lovelace after logging in. Notice how the ticket was correctly labeled as "Priority: High" and correctly routed to the IT Support team. 
+![Image of an agent's view after logging into the agent portal](./images/agentView.png)
+
+Here we can clearly see Hester Flower's ticket, so we review it and respond accordingly. 
+![Image of an agent resolving Hester Flower's ticket](./images/agentRespond.png)
+
+Once we believe that the ticket has been resolved, the agent tags the ticket as resolved and closes it appropriately.
+![Image of an agent closing the resolved ticket.](./images/resolved.png)
+
+
+## Conclusion 
+This is the workflow of my OSTicket instance, is it meant to be efficient, safe, and easy to understand. For more specific details on permissions, access control, and setup, please see the DESIGN.md file. 
