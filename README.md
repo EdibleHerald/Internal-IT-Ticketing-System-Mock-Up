@@ -1,4 +1,4 @@
-# Internal IT Ticketing System Mock Up
+# Internal IT Ticketing System Mock Environment
 
 This project showcases an IT ticketing system using OSTicket for a hypothetical 30-person SaaS startup.
 
